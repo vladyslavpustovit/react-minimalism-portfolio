@@ -6,7 +6,7 @@ export const MenuButton = (props) => {
         <FullpageContext.Consumer>
             {
                 ctx => (
-                    <button className={`list-none text-2xl font-bold cursor-pointer hover:text-indigo-600 transition-colors select-none ${pageNumber === ctx.number ? 'text-indigo-600' : ''}`}
+                    <button className={`list-none text-lg md:text-2xl font-bold cursor-pointer hover:text-indigo-600 hover:underline transition-colors select-none ${pageNumber === ctx.number ? 'text-indigo-600 underline' : ''}`}
                         onClick={() => {
                         ctx.goto(ctx.slides[pageNumber], true)
                         setMenuOpened(false)
