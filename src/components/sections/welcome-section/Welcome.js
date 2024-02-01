@@ -2,7 +2,7 @@ import {Section} from "../../content/Section";
 
 const Welcome = () => {
     return (
-        <Section>
+        <Section sectionId={'welcome'} sectionStyles={'gradient-main'}>
             <div className='grid md:grid-cols-2 w-full gap-12'>
                 <div>
                     <div>

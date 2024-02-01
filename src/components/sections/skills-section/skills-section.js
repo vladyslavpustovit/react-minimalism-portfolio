@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 
 export const SkillsSection = () => {
     return(
-        <Section>
+        <Section sectionId={'skills'}>
             <motion.div whileInView={'visible'}>
                 <Skills/>
                 <Languages/>

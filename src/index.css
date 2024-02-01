@@ -35,6 +35,13 @@ body {
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 1, 0.3));
 }
 
-.height-dvh-full {
-    height: 100dvh;
+.section-scroll-wrapper {
+    /*scroll-snap-align: start;*/
+    /*height: 100vh;*/
+}
+
+#scroll-container {
+    /*overflow-y: scroll;*/
+    /*scroll-snap-type: y mandatory;*/
+    /*height: 100vh;*/
 }
