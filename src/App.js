@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Navbar from "./components/navbar/Navbar";
 import {useEffect, useState} from "react";
 import {Menu} from "./components/side-menu/Menu";
+import {ScrollTopButton} from "./components/scroll-top-button/ScrollTopButton";
 
 function App() {
     const [activeSection, setActiveSection] = useState('welcome');
@@ -34,6 +35,7 @@ function App() {
             <Navbar/>
             <Layout/>
             <Menu activeSection={activeSection} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
+            {activeSection !== 'welcome' && <ScrollTopButton/>}
         </>
     );
 }

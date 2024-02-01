@@ -2,7 +2,7 @@ import {Section} from "../../content/Section";
 
 export const ContactSection = () => {
     return(
-        <Section sectionId={'contact'}>
+        <Section sectionId={'contact'} sectionStyles={'bg-blue-50'}>
             <div className="min-h-screen w-full flex flex-col justify-center">
                 <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>

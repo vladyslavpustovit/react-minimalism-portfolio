@@ -4,7 +4,7 @@ import ExpCard from "./ExpCard";
 
 export const ExperienceSection = () => {
     return (
-            <Section sectionId={'experience'}>
+            <Section sectionId={'experience'} sectionStyles={'bg-blue-50'}>
                 <div className='w-full'>
                     <h1 className='text-3xl md:text-4xl font-bold mb-10 text-center'>My Experience:</h1>
                 </div>

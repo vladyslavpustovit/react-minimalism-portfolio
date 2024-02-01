@@ -1,4 +1,5 @@
 import {Section} from "../../content/Section";
+import {scrollToSection} from "../../../utils/scroll-to-section";
 
 const Welcome = () => {
     return (
@@ -15,7 +16,7 @@ const Welcome = () => {
                         <p className='md:text-xl jura-light'>fueled by a passion for crafting digital experiences</p>
                     </div>
                     <div className='mt-8 md:mt-16 lg:mt-24'>
-                        <button className='lg:text-lg 2xl:text-xl rounded-full py-3 md:py-4 px-10 md:px-16 2xl:px-24 shadow-xl' style={{backgroundColor: '#D1F3FF'}}>Explore my work</button>
+                        <button onClick={() => scrollToSection('works')} className='lg:text-lg 2xl:text-xl rounded-full py-3 md:py-4 px-10 md:px-16 2xl:px-24 shadow-xl' style={{backgroundColor: '#D1F3FF'}}>Explore my work</button>
                     </div>
                 </div>
                 <div className="flex justify-center items-center relative">
