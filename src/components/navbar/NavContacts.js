@@ -1,5 +1,6 @@
 import {socialIcons} from "../../data/social-icons";
-import {scrollToSection} from "../../utils/scroll-to-section";
+import {FullpageContext} from "@ap.cx/react-fullpage";
+import {motion} from "framer-motion";
 
 const NavContacts = () => {
     return(
@@ -15,7 +16,15 @@ const NavContacts = () => {
                     ))
                 }
                 <li className='md:pl-6'>
-                   <button onClick={() => scrollToSection('contact')} className='md:text-2xl hover:underline'>Contact Me</button>
+                    <FullpageContext.Consumer>
+                        {
+                            ctx => (
+                                <button onClick={() => {
+                                    ctx.goto(ctx.slides[ctx.slides.length - 1], true)
+                                }} className='md:text-2xl hover:underline'>Contact Me</button>
+                            )
+                        }
+                    </FullpageContext.Consumer>
                 </li>
             </ul>
         </div>

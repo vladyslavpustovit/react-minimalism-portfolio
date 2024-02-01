@@ -1,15 +1,18 @@
-import {scrollToSection} from "../../utils/scroll-to-section";
+import {FullpageContext} from "@ap.cx/react-fullpage";
 
 export const MenuButton = (props) => {
-    const {label, activeSection, sectionId, setMenuOpened} = props;
-    const handleClick = () => {
-        setMenuOpened(false);
-        scrollToSection(sectionId);
-    }
-
+    const {label, pageNumber, setMenuOpened} = props;
     return (
-        <li onClick={handleClick} className={`list-none text-2xl font-bold cursor-pointer hover:text-indigo-600 transition-colors select-none ${activeSection === sectionId ? 'text-indigo-600' : ''}`}>
-            {label}
-        </li>
+        <FullpageContext.Consumer>
+            {
+                ctx => (
+                    <button className={`list-none text-2xl font-bold cursor-pointer hover:text-indigo-600 transition-colors select-none ${pageNumber === ctx.number ? 'text-indigo-600' : ''}`}
+                        onClick={() => {
+                        ctx.goto(ctx.slides[pageNumber], true)
+                        setMenuOpened(false)
+                    }}>{label}</button>
+                )
+            }
+        </FullpageContext.Consumer>
     )
 }
