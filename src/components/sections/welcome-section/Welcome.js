@@ -1,5 +1,4 @@
 import {Section} from "../../content/Section";
-import {FullpageContext} from "@ap.cx/react-fullpage";
 
 const Welcome = () => {
     return (
@@ -16,18 +15,10 @@ const Welcome = () => {
                         <p className='md:text-xl jura-light'>fueled by a passion for crafting digital experiences</p>
                     </div>
                     <div className='mt-8 md:mt-16 lg:mt-24'>
-                        <FullpageContext.Consumer>
-                            {
-                                ctx => (
-                                    <button style={{backgroundColor: '#D1F3FF'}}
-                                        className='lg:text-lg 2xl:text-xl rounded-full py-3 md:py-4 px-10 md:px-16 2xl:px-24 shadow-xl'
-                                        onClick={() => {
-                                            ctx.goto(ctx.slides[ctx.slides.length - 2], true)
-                                        }}>Explore my work
-                                    </button>
-                                )
-                            }
-                        </FullpageContext.Consumer>
+                        <button style={{backgroundColor: '#D1F3FF'}}
+                            className='lg:text-lg 2xl:text-xl rounded-full py-3 md:py-4 px-10 md:px-16 2xl:px-24 shadow-xl'>
+                            Explore my work
+                        </button>
                     </div>
                 </div>
                 <div className="flex justify-center items-center relative">

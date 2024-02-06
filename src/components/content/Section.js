@@ -1,11 +1,10 @@
 import {motion} from 'framer-motion'
-import {FullpageSection} from "@ap.cx/react-fullpage";
 
 export const Section = (props) => {
     const {children, sectionStyles} = props;
     return (
-        <FullpageSection className={`section-scroll-wrapper h-screen ${sectionStyles ?? ''}`}>
-            <motion.section className='h-full px-8 md:px-24 lg:px-32 overflow-hidden flex flex-col items-start justify-center'
+        <section className={`section ${sectionStyles ?? ''}`}>
+            <motion.div className='h-full px-8 md:px-24 lg:px-32 overflow-hidden flex flex-col items-start justify-center'
                             initial={{
                                 opacity: 0,
                                 y: 50
@@ -20,7 +19,7 @@ export const Section = (props) => {
                             }}
             >
                 {children}
-            </motion.section>
-        </FullpageSection>
+            </motion.div>
+        </section>
     )
 }

@@ -1,21 +1,33 @@
-import './App.css';
+import ReactFullpage from "@fullpage/react-fullpage";
 import Layout from "./components/Layout";
 import Navbar from "./components/navbar/Navbar";
-import {useState} from "react";
-import {Menu} from "./components/side-menu/Menu";
-import {ScrollTopButton} from "./components/scroll-top-button/ScrollTopButton";
-import Fullpage from "@ap.cx/react-fullpage";
+import { Menu } from "./components/side-menu/Menu";
+import { useRef, useState } from "react";
+import { ScrollTopButton } from "./components/scroll-top-button/ScrollTopButton";
+
+const anchors = ["about", "skills", "experience", "contact"];
 
 function App() {
-    const [menuOpened, setMenuOpened] = useState(false);
-    return (
-        <Fullpage>
-            <Navbar/>
-            <Layout/>
-            <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
-            <ScrollTopButton/>
-        </Fullpage>
-    );
+  const fullpageApiRef = useRef(null);
+  const [menuOpened, setMenuOpened] = useState(false);
+  return (
+    <>
+      <ReactFullpage
+        anchors={anchors}
+        render={({ state, fullpageApi }) => {
+          fullpageApiRef.current = fullpageApi;
+          return <Layout />;
+        }}
+      />
+        <Navbar fullpageApiRef={fullpageApiRef} />
+        <Menu
+            fullpageApiRef={fullpageApiRef}
+            menuOpened={menuOpened}
+            setMenuOpened={setMenuOpened}
+        />
+        <ScrollTopButton fullpageApiRef={fullpageApiRef} />
+    </>
+  );
 }
 
 export default App;
