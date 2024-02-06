@@ -3,7 +3,7 @@ import {FullpageContext} from "@ap.cx/react-fullpage";
 
 const Welcome = () => {
     return (
-        <Section sectionId={'welcome'} sectionStyles={'gradient-main'}>
+        <Section sectionStyles={'gradient-main'}>
             <div className='grid md:grid-cols-2 w-full gap-12'>
                 <div>
                     <div>

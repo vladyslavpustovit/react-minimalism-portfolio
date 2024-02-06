@@ -10,7 +10,7 @@ function App() {
     const [menuOpened, setMenuOpened] = useState(false);
     return (
         <Fullpage>
-        <Navbar/>
+            <Navbar/>
             <Layout/>
             <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
             <ScrollTopButton/>
