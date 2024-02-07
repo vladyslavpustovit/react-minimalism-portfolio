@@ -2,7 +2,7 @@ export default function ExpCard(props) {
     const { experience } = props;
 
     return (
-        <div className={`relative w-full min-h-full overflow-hidden bg-indigo-700 rounded-3xl max-w-xs shadow-lg text-white`}>
+        <div className={`relative w-full min-h-full overflow-hidden bg-indigo-700 rounded-3xl max-w-sm shadow-lg text-white mx-1 md:mx-4`}>
             <a href={experience.url}>
                     <span className="bg-indigo-500 rounded-full text-xs font-bold px-3 py-2 leading-none absolute top-4 right-4 z-10">
                         {experience.timePeriod}

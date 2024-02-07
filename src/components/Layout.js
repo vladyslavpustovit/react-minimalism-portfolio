@@ -4,12 +4,12 @@ import {ExperienceSection} from "./sections/experience-section/ExperienceSection
 import {ContactSection} from "./sections/contact-section/ContactSection";
 
 
-const Layout = () => {
+const Layout = ({windowSize}) => {
     return(
             <>
                 <Welcome />
                 <SkillsSection/>
-                <ExperienceSection/>
+                <ExperienceSection windowSize={windowSize}/>
                 <ContactSection/>
             </>
     )

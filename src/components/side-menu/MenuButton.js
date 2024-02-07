@@ -8,7 +8,7 @@ export const MenuButton = (props) => {
     }
 
     return (
-        <button className={`list-none text-lg md:text-2xl font-bold cursor-pointer hover:text-indigo-600 hover:underline
+        <button className={`list-none text-2xl md:text-2xl font-bold cursor-pointer hover:text-indigo-600 hover:underline
         transition-colors select-none ${pageAnchor === sectionAnchor ? 'text-indigo-600 underline' : ''}`} onClick={handleClick}>
             {label}
         </button>

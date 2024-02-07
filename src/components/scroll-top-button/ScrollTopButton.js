@@ -18,7 +18,7 @@ export const ScrollTopButton = ({ fullpageApiRef }) => {
         },
       }}
     >
-      <img className="w-14" src="/assets/up-arrow.svg" />
+      <img className="w-14 focus-shadow" src="/assets/up-arrow.svg" />
     </motion.div>
   );
 };
