@@ -25,17 +25,19 @@ export const ExperienceSection = ({windowSize}) => {
     }, [windowSize]);
     return (
             <Section sectionStyles={'bg-blue-50'}>
-                <div className='w-full'>
-                    <h1 className='text-3xl md:text-4xl font-bold mb-4 text-center'>My Experience:</h1>
-                </div>
-                <div className='w-full'>
-                    <Carousel cardsToShow={slidesToShow}>
-                        {
-                            experience.map((exp, index) => (
-                                <ExpCard key={'experience_'+index} experience={exp}/>
-                            ))
-                        }
-                    </Carousel>
+                <div className='h-full w-full flex flex-col justify-center'>
+                    <div className='w-full'>
+                        <h1 className='text-3xl md:text-4xl font-bold mb-8 text-center'>My Experience:</h1>
+                    </div>
+                    <div className='w-full'>
+                        <Carousel cardsToShow={slidesToShow}>
+                            {
+                                experience.map((exp, index) => (
+                                    <ExpCard key={'experience_'+index} experience={exp}/>
+                                ))
+                            }
+                        </Carousel>
+                    </div>
                 </div>
             </Section>
     )
