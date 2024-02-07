@@ -14,7 +14,7 @@ export const Menu = (props) => {
   return (
     <>
       <button
-        className="z-20 fixed top-4 right-4 md:right-8 p-3 bg-indigo-600 w-11 h-11 rounded-md focus-shadow"
+        className="z-20 fixed top-3 right-3 md:right-8 p-3 bg-indigo-600 w-11 h-11 rounded-md focus-shadow"
         onClick={() => setMenuOpened(!menuOpened)}
       >
         <div
