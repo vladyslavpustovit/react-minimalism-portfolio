@@ -1,10 +1,8 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import Layout from "./components/Layout";
-import Navbar from "./components/navbar/Navbar";
-import { Menu } from "./components/side-menu/Menu";
 import {useEffect, useRef, useState} from "react";
-import { ScrollTopButton } from "./components/scroll-top-button/ScrollTopButton";
 import {debounce} from "./utils/debouncer";
+import HUD from "./components/HUD";
 
 const anchors = ["about", "skills", "experience", "contact"];
 
@@ -40,14 +38,7 @@ function App() {
           return <Layout windowSize={windowSize}/>;
         }}
       />
-        <Navbar fullpageApiRef={fullpageApiRef} windowSize={windowSize} />
-        <Menu
-            fullpageApiRef={fullpageApiRef}
-            windowSize={windowSize}
-            menuOpened={menuOpened}
-            setMenuOpened={setMenuOpened}
-        />
-        <ScrollTopButton fullpageApiRef={fullpageApiRef} />
+      <HUD fullpageApiRef={fullpageApiRef} windowSize={windowSize} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>
     </>
   );
 }

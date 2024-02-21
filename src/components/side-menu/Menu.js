@@ -1,6 +1,7 @@
 import { MenuButton } from "./MenuButton";
 import {BREAKPOINTS} from "../../constants/breakpoints";
 import NavContacts from "../navbar/NavContacts";
+import {useEffect, useRef, useState} from "react";
 
 const menuItems = [
   { label: "About", anchor: "about" },
@@ -11,10 +12,30 @@ const menuItems = [
 
 export const Menu = (props) => {
   const { fullpageApiRef, windowSize, menuOpened, setMenuOpened } = props;
-  return (
-    <>
+  const [menuSize, setMenuSize] = useState('0')
+  const buttonRef = useRef(null);
+
+    useEffect(() => {
+        if (buttonRef.current && windowSize.width) {
+            const buttonRect = buttonRef.current.getBoundingClientRect();
+            const menuWidthOffset = 50;
+
+            const calcMenuWidth =
+                windowSize.width <= BREAKPOINTS.md
+                    ? '100%'
+                    : windowSize.width - buttonRect.x <= 150
+                        ? '20rem'
+                        : `${Math.round(windowSize.width - buttonRect.x) + menuWidthOffset}px`;
+
+            setMenuSize(calcMenuWidth);
+        }
+    }, [windowSize.width]);
+
+    return (
+    <div className='pointer-events-auto'>
       <button
-        className="z-20 fixed top-3 right-3 md:right-8 p-3 bg-indigo-600 w-11 h-11 rounded-md focus-shadow"
+        ref={buttonRef}
+        className="z-20 absolute top-3 right-3 md:right-8 p-3 bg-indigo-600 w-11 h-11 rounded-md focus-shadow"
         onClick={() => setMenuOpened(!menuOpened)}
       >
         <div
@@ -33,8 +54,8 @@ export const Menu = (props) => {
                 `}
         />
       </button>
-      <div className={`fixed top-0 right-0 bottom-0 bg-white transition-all overflow-hidden flex flex-col
-           ${menuOpened ? "w-full md:w-80 border-l border-gray-300 border-opacity-50" : "w-0"}`}>
+      <div style={{ width: menuOpened ? menuSize : 0 }}
+           className={`fixed z-10 top-0 right-0 bottom-0 bg-white transition-all overflow-hidden flex flex-col border-l border-gray-300 border-opacity-50`}>
         <div className="flex flex-col flex-1 items-center md:items-start justify-center gap-6 p-8">
           {menuItems.map((item, index) => (
             <MenuButton
@@ -54,6 +75,6 @@ export const Menu = (props) => {
               </div>
           )}
       </div>
-    </>
+    </div>
   );
 };

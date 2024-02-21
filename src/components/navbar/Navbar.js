@@ -4,8 +4,8 @@ import { BREAKPOINTS } from "../../constants/breakpoints";
 const Navbar = ({ fullpageApiRef, windowSize }) => {
   if (windowSize.width >= BREAKPOINTS.md) {
     return (
-        <div className="fixed top-0 z-10 w-full">
-          <div className="px-12 lg:px-32 w-full py-6 md:py-4">
+        <div className="absolute top-0 w-full pointer-events-auto">
+          <div className="w-full px-12 lg:px-32 py-6 md:py-4">
             <ul className="flex items-center">
               <li>
                 <NavContacts fullpageApiRef={fullpageApiRef}/>
@@ -25,7 +25,7 @@ const Navbar = ({ fullpageApiRef, windowSize }) => {
         </div>
     )
   } else {
-    return <img alt="logo" src="/assets/logo.png" className="fixed top-3 left-3 w-11"/>
+    return <img alt="logo" src="/assets/logo.png" className="absolute top-3 left-3 w-11"/>
   }
 };
 
