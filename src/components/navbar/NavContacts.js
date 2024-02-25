@@ -8,22 +8,12 @@ const NavContacts = ({ fullpageApiRef }) => {
           <li key={index}>
             <a href={icon.url} target="_blank" rel="noopener noreferrer">
               <img
-                className="w-[24px] lg:w-[36px] 2xl:w-full focus-shadow"
+                className="w-[30px] lg:w-[36px] 2xl:w-full focus-shadow"
                 src={icon.iconPath}
               />
             </a>
           </li>
         ))}
-        <li className="md:pl-6">
-          <button
-            onClick={() => {
-              fullpageApiRef.current.moveTo("contact");
-            }}
-            className="md:text-2xl hover:underline"
-          >
-            Contact Me
-          </button>
-        </li>
       </ul>
     </div>
   );

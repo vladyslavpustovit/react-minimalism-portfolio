@@ -6,7 +6,7 @@ export const ScrollTopButton = ({ fullpageApiRef }) => {
       onClick={() => {
         fullpageApiRef.current.moveTo("about");
       }}
-      className="cursor-pointer z-20 fixed bottom-4 right-4 md:right-8"
+      className="cursor-pointer absolute bottom-4 right-4 md:right-8 pointer-events-auto"
       initial={{
         opacity: 0,
       }}
@@ -18,7 +18,7 @@ export const ScrollTopButton = ({ fullpageApiRef }) => {
         },
       }}
     >
-      <img className="w-14" src="/assets/up-arrow.svg" />
+      <img className="w-14 focus-shadow" src="/assets/up-arrow.svg" alt='up-arrow' />
     </motion.div>
   );
 };

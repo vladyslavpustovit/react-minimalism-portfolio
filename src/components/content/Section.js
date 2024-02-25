@@ -4,7 +4,7 @@ export const Section = (props) => {
     const {children, sectionStyles} = props;
     return (
         <section className={`section ${sectionStyles ?? ''}`}>
-            <motion.div className='h-full px-8 md:px-24 lg:px-32 overflow-hidden flex flex-col items-start justify-center'
+            <motion.div className='h-full px-8 md:px-12 lg:px-32 py-6 md:py-0 container overflow-hidden'
                             initial={{
                                 opacity: 0,
                                 y: 50
