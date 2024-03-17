@@ -27,6 +27,7 @@ body {
     background: linear-gradient(137deg, rgba(236,237,252,1) 0%, rgba(255,255,255,1) 30%, rgba(164,233,255,1) 100%);
 }
 
+
 .focus-shadow:hover {
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 1, 0.3));
 }

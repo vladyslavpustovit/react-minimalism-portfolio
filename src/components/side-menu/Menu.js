@@ -55,7 +55,7 @@ export const Menu = (props) => {
         />
       </button>
       <div style={{ width: menuOpened ? menuSize : 0 }}
-           className={`fixed z-10 top-0 right-0 bottom-0 bg-white transition-all overflow-hidden flex flex-col border-l border-gray-300 border-opacity-50`}>
+           className={`fixed z-10 top-0 right-0 bottom-0 bg-white transition-all overflow-hidden flex flex-col border-opacity-50`}>
         <div className="flex flex-col flex-1 items-center md:items-start justify-center gap-6 p-8">
           {menuItems.map((item, index) => (
             <MenuButton
