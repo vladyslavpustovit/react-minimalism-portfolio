@@ -4,7 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import {debounce} from "./utils/debouncer";
 import HUD from "./components/HUD";
 
-const anchors = ["about", "skills", "experience", "contact"];
+const anchors = ["about", "skills", "works", "experience", "contact"];
 
 function App() {
   const fullpageApiRef = useRef(null);

@@ -6,6 +6,7 @@ import {useEffect, useRef, useState} from "react";
 const menuItems = [
   { label: "About", anchor: "about" },
   { label: "Skills", anchor: "skills" },
+  { label: "Works", anchor: "works" },
   { label: "Experience", anchor: "experience" },
   { label: "Contact me", anchor: "contact" },
 ];
